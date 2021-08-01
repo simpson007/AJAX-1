@@ -1,39 +1,5 @@
 console.log('我是main.js')
 
-getHTML.onclick = () => {
-    const request = new XMLHttpRequest()
-    request.open("GET", "/3.html")
-    request.onload = () => {
-        //创建div标签
-        const div = document.createElement('div')
-        //填写div内容
-        div.innerHTML = request.response
-        //插到身体里
-        document.body.appendChild(div)
-    }
-    request.onerror = () => {
-        console.log('失败了')
-    }
-    request.send()
-}
-getJS.onclick = () => {
-    const request = new XMLHttpRequest()
-    request.open("GET", "/2.js")
-    request.onload = () => {
-        //创建script标签
-        const script = document.createElement('script')
-        //填写style内容
-        script.innerHTML = request.response
-        //插到身体里
-        document.body.appendChild(script)
-    }
-    request.onerror = () => {
-        console.log('失败了')
-    }
-    request.send()
-}
-
-
 getCSS.onclick = () => {
     const request = new XMLHttpRequest()
     request.open("GET", "/style.css")
@@ -54,6 +20,41 @@ getCSS.onclick = () => {
     }
     request.send()
 }
+
+getJS.onclick = () => {
+    const request = new XMLHttpRequest()
+    request.open("GET", "/2.js")
+    request.onload = () => {
+        //创建script标签
+        const script = document.createElement('script')
+        //填写style内容
+        script.innerHTML = request.response
+        //插到身体里
+        document.body.appendChild(script)
+    }
+    request.onerror = () => {
+        console.log('失败了')
+    }
+    request.send()
+}
+
+getHTML.onclick = () => {
+    const request = new XMLHttpRequest()
+    request.open("GET", "/3.html")
+    request.onload = () => {
+        //创建div标签
+        const div = document.createElement('div')
+        //填写div内容
+        div.innerHTML = request.response
+        //插到身体里
+        document.body.appendChild(div)
+    }
+    request.onerror = () => {
+        console.log('失败了')
+    }
+    request.send()
+}
+
 getXML.onclick = () => {
     const request = new XMLHttpRequest()
     request.open("GET", "/4.xml")
